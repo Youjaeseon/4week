@@ -105,6 +105,7 @@ void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 {
     ListNode *cur1;
 	ListNode *cur2;
+	ListNode *merge;
 
 	if(ll1 == NULL && ll2 == NULL){
 		return -1;
@@ -115,6 +116,16 @@ void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 
 	if(cur1 == NULL && cur2 == NULL){
 		return -1;
+	}
+
+	while(cur2->next){
+		
+		cur1->next = cur2;
+		cur1 = cur1->next;
+		cur2 = cur2->next;
+
+
+
 	}
 
 
