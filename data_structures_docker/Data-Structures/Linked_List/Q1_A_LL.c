@@ -104,6 +104,14 @@ int insertSortedLL(LinkedList *ll, int item)
 	new->item = item;
 	new->next = NULL;
 
+	if (ll->head == NULL || item <= ll->head->item){
+		new->next = ll->head;
+		ll->head = new;
+		ll->size++;
+
+		return 0;
+	}
+
 
 }
 
