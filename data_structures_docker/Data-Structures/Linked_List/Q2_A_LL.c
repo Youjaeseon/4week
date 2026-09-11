@@ -119,12 +119,14 @@ void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 		return -1;
 	}
 
-	while(cur2->next){
+	while(cur2 != NULL && cur1 != NULL){
 		
 		merge = cur1->next;
 		cur1->next = cur2;
+		temp2 = cur2->next;
 		cur2->next = merge;
 		cur1 = merge;
+		cur2 = temp2;
 
 
 	}
