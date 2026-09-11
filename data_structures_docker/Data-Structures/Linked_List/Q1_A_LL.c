@@ -92,12 +92,17 @@ int insertSortedLL(LinkedList *ll, int item)
 {
 	/* add your code here */ 
 	if (ll == NULL)
-		return;
+		return -1;
 
 	ListNode *cur = ll->head;
 	ListNode *new;
 	new = malloc(sizeof(ListNode));
+
+	if (new == NULL)
+		return -1;
+
 	new->item = item;
+	new->next = NULL;
 
 
 }
