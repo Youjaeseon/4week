@@ -95,6 +95,9 @@ int insertSortedLL(LinkedList *ll, int item)
 	if (ll == NULL)
 		return -1;
 
+	if (ll->head != NULL && item == ll->head->item)
+		return -1;
+
 	ListNode *new;
 	new = malloc(sizeof(ListNode));
 
@@ -117,8 +120,12 @@ int insertSortedLL(LinkedList *ll, int item)
 	while (cur->next != NULL && cur->next->item < item){
 		cur = cur->next;
 		index++;
-		
 	}
+	  if (cur->next != NULL && cur->next->item == item) {
+        free(new);
+        return -1;
+    }
+		
 	new->next = cur->next;
 	cur->next = new;
 
