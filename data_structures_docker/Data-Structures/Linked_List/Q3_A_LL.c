@@ -86,7 +86,9 @@ int main()
 
 void moveOddItemsToBack(LinkedList *ll)
 {
-	/* add your code here */
+	if (ll == NULL){
+		return;
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
