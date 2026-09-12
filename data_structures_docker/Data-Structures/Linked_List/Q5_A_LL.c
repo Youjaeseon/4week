@@ -110,17 +110,12 @@ void frontBackSplitLinkedList(LinkedList *ll, LinkedList *resultFrontList, Linke
 	ListNode *front = resultFrontList->head;
 	ListNode *back = resultBackList->head;
 
-	int count = 1;
-
-	while(cur->next != NULL){
-		cur = cur->next;
-		count++;
-	}
-
-	int index = ceil(count/2.0);
+	int index = ceil(ll->size/2.0)-1;
 
 	front = findNode(ll,index);
-	back = findNode(ll,index);
+	back = findNode(ll,index+1);
+	
+	while()
 
 
 
