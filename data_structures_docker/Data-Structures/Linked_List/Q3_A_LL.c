@@ -89,6 +89,17 @@ void moveOddItemsToBack(LinkedList *ll)
 	if (ll == NULL){
 		return;
 	}
+	
+	ListNode *cur = ll->head;
+	ListNode *odd;
+
+	while ()
+	{
+		/* code */
+	}
+	
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
