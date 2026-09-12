@@ -91,11 +91,13 @@ void moveOddItemsToBack(LinkedList *ll)
 	}
 	
 	ListNode *cur = ll->head;
-	ListNode *odd;
+	ListNode *tail = ll->head;
+	ListNode *end;
 
-	while ()
-	{
-		/* code */
+
+	while (tail->next != NULL){
+		tail =
+
 	}
 	
 
