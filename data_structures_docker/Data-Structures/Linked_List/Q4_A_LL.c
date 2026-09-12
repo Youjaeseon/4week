@@ -100,6 +100,9 @@ void moveEvenItemsToBack(LinkedList *ll)
 
 		if (cur->item%2 == 0){
 			int value = cur->item;
+
+			removeNode(ll, index);
+			insertNode(ll, ll->size, value);
 		}
 
 		else{
