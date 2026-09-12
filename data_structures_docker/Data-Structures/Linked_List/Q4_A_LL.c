@@ -90,7 +90,7 @@ void moveEvenItemsToBack(LinkedList *ll)
 		return;
 	}
 	
-	ListNode *Size = ll->size;
+	int Size = ll->size;
 	int index = 0;
 	int count = 0;
 
