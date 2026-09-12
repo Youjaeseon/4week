@@ -109,14 +109,14 @@ void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 	ListNode *temp2;
 
 	if(ll1 == NULL && ll2 == NULL){
-		return -1;
+		return ;
 	}
 
 	cur1 = ll1->head;
 	cur2 = ll2->head;
 
 	if(cur1 == NULL && cur2 == NULL){
-		return -1;
+		return ;
 	}
 
 	while(cur2 != NULL && cur1 != NULL){
@@ -127,9 +127,9 @@ void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 		cur2->next = merge;
 		cur1 = merge;
 		cur2 = temp2;
-
-
+		ll1->size++;
 	}
+	ll2->head = cur2;
 
 
 }
