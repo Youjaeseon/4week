@@ -93,6 +93,21 @@ void moveEvenItemsToBack(LinkedList *ll)
 	ListNode *Size = ll->size;
 	int index = 0;
 	int count = 0;
+
+	while(count<Size){
+
+		ListNode *cur = findNode(ll, index);
+
+		if (cur->item%2 == 0){
+			int value = cur->item;
+		}
+
+		else{
+			//홀수 시 다음 위치
+			index++;
+		}
+		count++;
+	}
 	
 	
 
