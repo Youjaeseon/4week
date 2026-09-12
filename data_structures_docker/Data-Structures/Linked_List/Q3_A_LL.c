@@ -93,7 +93,8 @@ void moveOddItemsToBack(LinkedList *ll)
 	ListNode *cur = ll->head;
 	ListNode *tail = ll->head;
 	ListNode *prev = NULL;
-
+	
+	// 마지막 노드 찾기
 	while (tail->next != NULL){
 		tail = tail->next;
 	}
@@ -105,17 +106,20 @@ void moveOddItemsToBack(LinkedList *ll)
 		if(cur->item%2 != 0){
 
 			ListNode *next = cur->next;
-
+			
+			// 현재 홀수 노드를 기존 위치에서 제거
 			if(prev == NULL){
 				ll->head = next;
 			}
 			else{
 				prev->next = next;
 			}
+			//맨 뒤에 붙이기
 			tail->next = cur;
 			tail = cur;
 			tail->next = NULL;
 
+			// 기존 마지막 노드 돌면 break;
 			if(cur == originalTail)
 				break;
 			
@@ -124,9 +128,10 @@ void moveOddItemsToBack(LinkedList *ll)
 		}
 
 		else{
+			// 짝수 처리
 			if(cur == originalTail)
 				break;
-				
+
 			prev = cur;
 			cur = cur->next;
 		}
