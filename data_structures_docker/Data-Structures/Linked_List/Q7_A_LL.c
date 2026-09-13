@@ -99,6 +99,11 @@ void RecursiveReverse(ListNode **ptrHead)
 	// 두 번째 노드부터 재귀
 	RecursiveReverse(&rest);
 
+	cur->next->next = cur;
+
+	cur->next = NULL;
+	
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////
