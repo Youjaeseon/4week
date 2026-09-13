@@ -102,6 +102,7 @@ int moveMaxToFront(ListNode **ptrHead)
 	prev = NULL;
 	maxPrev = NULL;
 	
+	//최대값 노드와 그 이전 노드
 	while(cur != NULL){
 		if (cur->item > maxNode->item){
 			maxNode = cur;
@@ -109,9 +110,13 @@ int moveMaxToFront(ListNode **ptrHead)
 		}
 		prev = cur;
 		cur = cur->next;
+	}
+
+	if(maxPrev != NULL){
 		maxPrev->next = maxNode->next;
 		maxNode->next = *ptrHead;
 		*ptrHead = maxNode;
+
 	}
 
 	return 1;
