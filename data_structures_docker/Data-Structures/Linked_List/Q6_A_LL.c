@@ -112,6 +112,7 @@ int moveMaxToFront(ListNode **ptrHead)
 		cur = cur->next;
 	}
 
+	// 최대값이 첫 번째 노드가 아니라면 앞으로 이동
 	if(maxPrev != NULL){
 		maxPrev->next = maxNode->next;
 		maxNode->next = *ptrHead;
