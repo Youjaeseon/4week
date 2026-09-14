@@ -133,10 +133,21 @@ void removeEvenValues(Stack *s)
 	temp.ll.head = NULL;
 	temp.ll.size = 0;
 
-	// 원래 스택에서 꺼내서
-	// 홀수만 temp에 저장
+	int num ;
 
-	// temp의 값을 다시 원래 스택으로 복원
+	while (!isEmptyStack(s))
+	{
+		num = pop(s);
+		if(num%2 != 0){
+			push(&temp, num);
+		}
+		push(&temp,num);
+	}
+
+	while(!isEmptyStack(&temp)){
+		num = pop(&temp);
+		push(s,num);
+	}
 	
 
 }
