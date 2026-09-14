@@ -111,7 +111,20 @@ int main()
 
 void removeUntil(Stack *s, int value)
 {
-/* add your code here */
+	if(isEmptyStack(s)||s->ll.size ==0)
+		return;
+
+	ListNode *cur = s->ll.head;
+
+	for(int i = 0; i<s->ll.size; i++){
+		if (value == cur->item)
+		break;
+		pop(s);
+		cur = cur->next;
+	}
+	
+
+	
 }
 
 //////////////////////////////////////////////////////////////////////////////////
