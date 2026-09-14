@@ -115,7 +115,7 @@ void createStackFromLinkedList(LinkedList *ll, Stack *s)
 {
 	if(ll == NULL)
 		return;
-		
+
     removeAllItemsFromStack(s);
 
 	ListNode *cur = ll->head;
@@ -129,6 +129,14 @@ void createStackFromLinkedList(LinkedList *ll, Stack *s)
 
 void removeEvenValues(Stack *s)
 {
+	Stack temp;
+	temp.ll.head = NULL;
+	temp.ll.size = 0;
+
+	// 원래 스택에서 꺼내서
+	// 홀수만 temp에 저장
+
+	// temp의 값을 다시 원래 스택으로 복원
 	
 
 }
