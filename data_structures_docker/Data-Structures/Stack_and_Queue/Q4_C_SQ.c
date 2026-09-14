@@ -112,7 +112,14 @@ int main()
 
 void reverse(Queue *q)
 {
-/* add your code here */
+	if (q == NULL)
+		return;
+
+	Stack stack;
+	stack.ll.head = NULL;
+
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
