@@ -141,7 +141,6 @@ void removeEvenValues(Stack *s)
 		if(num%2 != 0){
 			push(&temp, num);
 		}
-		push(&temp,num);
 	}
 
 	while(!isEmptyStack(&temp)){
