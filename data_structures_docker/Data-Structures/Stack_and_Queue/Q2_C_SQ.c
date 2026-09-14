@@ -113,6 +113,9 @@ int main()
 
 void createStackFromLinkedList(LinkedList *ll, Stack *s)
 {
+	if(ll == NULL)
+		return;
+		
     removeAllItemsFromStack(s);
 
 	ListNode *cur = ll->head;
