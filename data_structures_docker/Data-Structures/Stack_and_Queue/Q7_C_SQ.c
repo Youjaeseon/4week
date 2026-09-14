@@ -103,21 +103,61 @@ int main()
 ////////////////////////////////////////////////////////////
 int balanced(char *expression)
 {
-	Stack balanced;
-	balanced.ll.head = NULL;
-	balanced.ll.size = 0;
+    Stack balanced;
+    balanced.ll.head = NULL;
+    balanced.ll.size = 0;
 
-	if(expression == NULL)
-		return 0;
+    if (expression == NULL)
+        return 0;
 
-	for(int i = 0 ; i<strlen(expression);i++){
+    for (int i = 0; expression[i] != '\0'; i++)
+    {
+        switch (expression[i])
+        {
+        case '(':
+        case '[':
+        case '{':
+            push(&balanced, expression[i]);
+            break;
 
+        case ')':
+            if (isEmptyStack(&balanced) || peek(&balanced) != '(')
+            {
+                removeAllItemsFromStack(&balanced);
+                return 1;
+            }
+            pop(&balanced);
+            break;
 
-	}
-	
+        case ']':
+            if (isEmptyStack(&balanced) || peek(&balanced) != '[')
+            {
+                removeAllItemsFromStack(&balanced);
+                return 1;
+            }
+            pop(&balanced);
+            break;
 
+        case '}':
+            if (isEmptyStack(&balanced) || peek(&balanced) != '{')
+            {
+                removeAllItemsFromStack(&balanced);
+                return 1;
+            }
+            pop(&balanced);
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    if (isEmptyStack(&balanced))
+        return 0;
+
+    removeAllItemsFromStack(&balanced);
+    return 1;
 }
-
 ////////////////////////////////////////////////////////////
 
 void removeAllItemsFromStack(Stack *s)
