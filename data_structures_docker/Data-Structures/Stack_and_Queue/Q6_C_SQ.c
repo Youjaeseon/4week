@@ -114,7 +114,7 @@ void removeUntil(Stack *s, int value)
 	if(isEmptyStack(s)||s->ll.size ==0)
 		return;
 
-	for(int i = 0; i<s->ll.size; ){
+	while(!isEmptyStack(s)){
 		if (value == s->ll.head->item)
 		break;
 		
