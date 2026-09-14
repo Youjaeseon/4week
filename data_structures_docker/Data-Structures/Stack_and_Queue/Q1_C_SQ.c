@@ -116,12 +116,20 @@ int main()
 
 void createQueueFromLinkedList(LinkedList *ll, Queue *q)
 {
-	/* add your code here */
+	if(isEmptyQueue(q))
+		return;
+
+	removeAllItemsFromQueue(q);
+
+	if(ll == NULL || ll->head == NULL)
+		return;
+		
 }
 
 void removeOddValues(Queue *q)
 {
-	/* add your code here */
+	
+	
 }
 
 //////////////////////////////////////////////////////////////////////////////////
