@@ -95,7 +95,6 @@ int main()
 			printf("Choice unknown;\n");
 			break;
 		}
-
 	}
 
 	return 0;
@@ -104,7 +103,19 @@ int main()
 ////////////////////////////////////////////////////////////
 int balanced(char *expression)
 {
-/* add your code here */
+	Stack balanced;
+	balanced.ll.head = NULL;
+	balanced.ll.size = 0;
+
+	if(expression == NULL)
+		return 0;
+
+	for(int i = 0 ; i<strlen(expression);i++){
+
+
+	}
+	
+
 }
 
 ////////////////////////////////////////////////////////////
