@@ -103,10 +103,7 @@ int maxHeight(BTNode *node)
     int leftHeight = maxHeight(node->left);
     int rightHeight = maxHeight(node->right);
 
-    if (leftHeight > rightHeight)
-        return leftHeight + 1;
-    else
-        return rightHeight + 1;
+    return (leftHeight > rightHeight ? leftHeight : rightHeight) + 1;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
