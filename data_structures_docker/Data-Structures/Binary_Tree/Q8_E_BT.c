@@ -103,29 +103,17 @@ int main()
 int hasGreatGrandchild(BTNode *node)
 {
     if (node == NULL)
-        return 0;
+        return -1;
 
-    if (node->left != NULL) {
-        if ((node->left->left != NULL &&
-             (node->left->left->left != NULL ||
-              node->left->left->right != NULL)) ||
-            (node->left->right != NULL &&
-             (node->left->right->left != NULL ||
-              node->left->right->right != NULL)))
-            return 1;
-    }
+    int left = hasGreatGrandchild(node->left);
+    int right = hasGreatGrandchild(node->right);
 
-    if (node->right != NULL) {
-        if ((node->right->left != NULL &&
-             (node->right->left->left != NULL ||
-              node->right->left->right != NULL)) ||
-            (node->right->right != NULL &&
-             (node->right->right->left != NULL ||
-              node->right->right->right != NULL)))
-            return 1;
-    }
+    int height = (left > right ? left : right) + 1;
 
-    return 0;
+    if (height >= 3)
+        printf("%d ", node->item);
+
+    return height;
 }
 
 //////////////////////////////////////////////////////////////////////////////////
