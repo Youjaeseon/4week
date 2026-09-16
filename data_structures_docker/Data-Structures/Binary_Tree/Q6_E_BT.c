@@ -114,9 +114,6 @@ void printSmallerValues(BTNode *node, int m)
     }
     printSmallerValues(node->left,m);
     printSmallerValues(node->right,m);
-
-    
-   
     
 }
 
