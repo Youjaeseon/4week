@@ -109,6 +109,12 @@ void levelOrderTraversal(BSTNode* root)
 
         printf("%d ", cur->item);
 
+        if (cur->left != NULL)
+            enqueue(&q.head, &q.tail, cur->left);
+	
+		if (cur->right != NULL)
+            enqueue(&q.head, &q.tail, cur->right);
+
     }
 
 }
